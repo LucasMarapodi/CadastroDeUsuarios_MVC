@@ -1,0 +1,60 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Projeto</title>
+
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+
+
+    <div class="container mt-4 mb-2">
+        <h3>Sistema de Controle de Clientes</h3>
+
+        <ul class="mb-2 pb-2">
+            <li><a class="h4" href="/Cliente/Cadastro">Cadastrar Cliente</a></li>
+            <li><a class="h4" href="/Cliente/Consulta">Consultar Clientes</a></li>
+        </ul>
+
+        <hr />
+
+
+        @if (TempData["MensagemSucesso"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>@TempData["MensagemSucesso"]</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+        }
+        @if (TempData["MensagemErro"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>@TempData["MensagemErro"]</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+         }
+
+
+                @RenderBody()
+
+    </div>
+
+
+
+            <script src="~/js/jquery-3.6.0.min.js"></script>
+            <script src="~/js/bootstrap.js"></script>
+</body>
+</html>

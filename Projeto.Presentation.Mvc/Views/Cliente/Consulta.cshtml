@@ -1,0 +1,32 @@
+﻿
+@model List<Projeto.Repository.Entities.Cliente>
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Nascimento</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Senha</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Nome</th>
+                <td>@item.Email</td>
+                <td>@item.DataNascimento.ToString("dd/MM/yyyy")</td>
+                <td>@item.Usuario</td>
+                <td>@item.Senha</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
