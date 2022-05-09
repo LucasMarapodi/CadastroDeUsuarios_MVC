@@ -1,0 +1,10 @@
+create Table Cliente(
+
+	idCliente		int				identity(1,1),
+	Nome			nvarchar(150)	not null,
+	Email			nvarchar(150)	not null,
+	DataNascimento	DateTime		not null,
+	Usuario			nvarchar(150)	not null,
+	Senha			nvarchar(150)	not null,
+
+primary Key(idCliente));
